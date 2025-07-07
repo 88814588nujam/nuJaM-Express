@@ -81,6 +81,26 @@
             color: #666;
             margin-bottom: 15px;
         }
+
+        .product-meta {
+            margin-top: 15px;
+        }
+
+        .meta-item {
+            margin: 8px 0;
+        }
+
+        .repo-link {
+            color: #333; /* 保持黑色 */
+            text-decoration: none; /* 移除下划线 */
+            transition: color 0.2s;
+            word-break: break-all; /* 长链接自动换行 */
+        }
+
+        .repo-link:hover {
+            color: #2c3e50; /* 悬停时稍微加深颜色 */
+            text-decoration: underline; /* 悬停时显示下划线 */
+        }
         
         footer {
             text-align: center;
@@ -198,7 +218,14 @@
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product1-title">智能家居控制器</h3>
                     <p class="product-desc" data-i18n="product1-desc">一款可以通过手机APP控制家中所有智能设备的中央控制器，支持语音控制和自动化场景设置。</p>
-                    <p><strong data-i18n="features">特点：</strong><span data-i18n="product1-features">多设备兼容、易安装、节能省电</span></p>
+                    <p class="meta-item">
+                        <strong data-i18n="repository">仓库：</strong>
+                        <a href="https://github.com/88814588nujam/Jump-Game" target="_blank" rel="noopener noreferrer" class="repo-link" data-i18n="product1-repository">https://github.com/88814588nujam/Jump-Game</a>
+                    </p>
+                    <p class="meta-item">
+                        <strong data-i18n="demo">演示：</strong>
+                        <span data-i18n="product1-demo">暂缺</span>
+                    </p>
                 </div>
             </div>
             
@@ -208,7 +235,14 @@
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product2-title">环保材料背包</h3>
                     <p class="product-desc" data-i18n="product2-desc">采用回收塑料瓶制成的环保材料制作的背包，轻便耐用，防水设计，适合日常出行和短途旅行。</p>
-                    <p><strong data-i18n="features">特点：</strong><span data-i18n="product2-features">环保材料、多口袋设计、舒适肩带</span></p>
+                    <p class="meta-item">
+                        <strong data-i18n="repository">仓库：</strong>
+                        <a href="https://github.com/88814588nujam/Jump-Game" target="_blank" rel="noopener noreferrer" class="repo-link" data-i18n="product1-repository">https://github.com/88814588nujam/Jump-Game</a>
+                    </p>
+                    <p class="meta-item">
+                        <strong data-i18n="demo">演示：</strong>
+                        <span data-i18n="product1-demo">暂缺</span>
+                    </p>
                 </div>
             </div>
             
@@ -218,7 +252,14 @@
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product3-title">手工陶瓷茶具</h3>
                     <p class="product-desc" data-i18n="product3-desc">纯手工制作的陶瓷茶具套装，每一件都是独一无二的艺术品，让品茶成为一种享受。</p>
-                    <p><strong data-i18n="features">特点：</strong><span data-i18n="product3-features">手工制作、天然釉料、保温性好</span></p>
+                    <p class="meta-item">
+                        <strong data-i18n="repository">仓库：</strong>
+                        <a href="https://github.com/88814588nujam/Jump-Game" target="_blank" rel="noopener noreferrer" class="repo-link" data-i18n="product1-repository">https://github.com/88814588nujam/Jump-Game</a>
+                    </p>
+                    <p class="meta-item">
+                        <strong data-i18n="demo">演示：</strong>
+                        <span data-i18n="product1-demo">暂缺</span>
+                    </p>
                 </div>
             </div>
             
@@ -228,7 +269,14 @@
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product4-title">木质手机支架</h3>
                     <p class="product-desc" data-i18n="product4-desc">精选实木制作的手机支架，天然木纹每一款都不同，角度可调，保护颈椎健康。</p>
-                    <p><strong data-i18n="features">特点：</strong><span data-i18n="product4-features">天然木材、多角度调节、稳固耐用</span></p>
+                    <p class="meta-item">
+                        <strong data-i18n="repository">仓库：</strong>
+                        <a href="https://github.com/88814588nujam/Jump-Game" target="_blank" rel="noopener noreferrer" class="repo-link" data-i18n="product1-repository">https://github.com/88814588nujam/Jump-Game</a>
+                    </p>
+                    <p class="meta-item">
+                        <strong data-i18n="demo">演示：</strong>
+                        <span data-i18n="product1-demo">暂缺</span>
+                    </p>
                 </div>
             </div>
         </section>
@@ -248,18 +296,17 @@
                 "welcome": "Welcome to My Portfolio",
                 "intro-text": "Here are displayed various works that I have carefully designed and produced.",
                 "product1-title": "Jump-Game",
-                "product1-desc": "A simple jump game developed using Unity.",
-                "product1-features": "Although this is the first simple work made to help learn Photoshop skills, it still has a certain playability.",
+                "product1-desc": "A simple jump game developed using Unity. Although this is the first simple work made to help learn Photoshop skills, it still has a certain playability.",
+		"product1-repository": "https://github.com/88814588nujam/Jump-Game",
+		"product1-demo": "Unavailable",
                 "product2-title": "Eco-friendly Backpack",
                 "product2-desc": "Backpack made from recycled plastic bottles, lightweight and durable with waterproof design, perfect for daily use and short trips.",
-                "product2-features": "Eco-friendly material, multiple pockets, comfortable straps",
                 "product3-title": "Handmade Ceramic Tea Set",
                 "product3-desc": "Ceramic tea set crafted by hand, each piece is a unique artwork that makes tea drinking a delightful experience.",
-                "product3-features": "Handcrafted, natural glaze, good heat retention",
                 "product4-title": "Wooden Phone Stand",
                 "product4-desc": "Phone stand made from selected solid wood, each with unique natural wood grain, adjustable angle for neck protection.",
-                "product4-features": "Natural wood, adjustable angles, sturdy and durable",
-                "features": "Features:",
+                "repository": "Repository: ",
+                "demo": "Demo: ",
                 "footer": "© 2025 nuJaM's Product Showcase | Contact: 24ci0229@jec.ac.jp",
                 "language": "Language",
                 "chinese": "Chinese",
@@ -273,18 +320,17 @@
                 "welcome": "欢迎来到我的作品展示",
                 "intro-text": "这里展示了我精心设计和制作的各种作品。",
                 "product1-title": "Jump-Game",
-                "product1-desc": "使用Unity开发的简单跳跃游戏。",
-                "product1-features": "虽然是为了配合学习phototshop技巧时候制作的第一个简单的作品，但是依然有一定的游戏性。",
+                "product1-desc": "使用Unity开发的简单跳跃游戏。虽然是为了配合学习phototshop技巧时候制作的第一个简单的作品，但是依然有一定的游戏性。",
+                "product1-repository": "https://github.com/88814588nujam/Jump-Game",
+                "product1-demo": "暂缺",
                 "product2-title": "环保材料背包",
                 "product2-desc": "采用回收塑料瓶制成的环保材料制作的背包，轻便耐用，防水设计，适合日常出行和短途旅行。",
-                "product2-features": "环保材料、多口袋设计、舒适肩带",
                 "product3-title": "手工陶瓷茶具",
                 "product3-desc": "纯手工制作的陶瓷茶具套装，每一件都是独一无二的艺术品，让品茶成为一种享受。",
-                "product3-features": "手工制作、天然釉料、保温性好",
                 "product4-title": "木质手机支架",
                 "product4-desc": "精选实木制作的手机支架，天然木纹每一款都不同，角度可调，保护颈椎健康。",
-                "product4-features": "天然木材、多角度调节、稳固耐用",
-                "features": "特点：",
+                "repository": "仓库：",
+                "demo": "演示：",
                 "footer": "© 2025 nuJaM的产品展示 | 联系邮箱: 24ci0229@jec.ac.jp",
                 "language": "语言",
                 "chinese": "中文",
@@ -298,18 +344,17 @@
                 "welcome": "私の作品展示へようこそ",
                 "intro-text": "私が心を込めてデザイン・制作した様々な作品を展示しております。",
                 "product1-title": "Jump-Game",
-                "product1-desc": "Unityを使用して開発されたシンプルなジャンプゲーム。",
-                "product1-features": "これは Photoshop のスキルを習得するために作成された最初のシンプルな作品ですが、それでもある程度の遊び心があります。",
+                "product1-desc": "Unityを使用して開発されたシンプルなジャンプゲーム。これは Photoshop のスキルを習得するために作成された最初のシンプルな作品ですが、それでもある程度の遊び心があります。",
+                "product1-repository": "https://github.com/88814588nujam/Jump-Game",
+                "product1-demo": "利用不可",
                 "product2-title": "エコフレンドリーなバックパック",
                 "product2-desc": "リサイクルペットボトルから作られたバックパックで、軽量で耐久性があり、防水設計で日常の外出や短い旅行に最適です。",
-                "product2-features": "エコフレンドリーな素材、複数のポケット、快適なストラップ",
                 "product3-title": "手作りの陶磁器茶セット",
                 "product3-desc": "手作業で作られた陶磁器の茶セットで、それぞれがユニークな芸術品であり、お茶を飲むことを楽しい体験にします。",
-                "product3-features": "手作り、天然釉薬、保温性が良い",
                 "product4-title": "木製のスマホスタンド",
                 "product4-desc": "選ばれた天然木から作られたスマホスタンドで、それぞれが異なる天然木目を持ち、首の保護のために角度調節可能です。",
-                "product4-features": "天然木、調節可能な角度、頑丈で耐久性がある",
-                "features": "特徴：",
+                "repository": "リポジトリ：",
+                "demo": "デモ：",
                 "footer": "© 2025 nuJaMの製品展示 | 連絡先: 24ci0229@jec.ac.jp",
                 "language": "言語",
                 "chinese": "中国語",
@@ -323,18 +368,17 @@
                 "welcome": "나의 작품 전시에 오신 것을 환영합니다",
                 "intro-text": "여기에는 제가 신중하게 디자인하고 제작한 다양한 작품이 전시되어 있습니다.",
                 "product1-title": "Jump-Game",
-                "product1-desc": "Unity를 사용하여 개발된 간단한 점프 게임.",
-                "product1-features": "포토샵 기술을 익히는 데 도움이 되는 최초의 간단한 작품이기는 하지만, 여전히 어느 정도 플레이할 만한 가치가 있습니다.",
+                "product1-desc": "Unity를 사용하여 개발된 간단한 점프 게임.포토샵 기술을 익히는 데 도움이 되는 최초의 간단한 작품이기는 하지만, 여전히 어느 정도 플레이할 만한 가치가 있습니다.",
+                "product1-repository": "https://github.com/88814588nujam/Jump-Game",
+                "product1-demo": "없음",
                 "product2-title": "친환경 백팩",
                 "product2-desc": "재활용 페트병으로 만든 친환경 소재의 백팩으로, 가볍고 내구성이 뛰어나며 방수 설계로 일상적인 외출과 짧은 여행에 적합합니다.",
-                "product2-features": "친환경 소재, 다중 포켓, 편안한 어깨끈",
                 "product3-title": "수제 도자기 차 세트",
                 "product3-desc": "손으로 제작한 도자기 차 세트로, 각각이 독특한 예술품이며 차 마시기를 즐거운 경험으로 만들어 줍니다.",
-                "product3-features": "수제, 천유 유약, 우수한 보온성",
                 "product4-title": "목재 휴대폰 스탠드",
                 "product4-desc": "선별된 원목으로 만든 휴대폰 스탠드로, 각각 고유의 나무 결을 가지고 있으며 목 보호를 위해 각도 조절이 가능합니다.",
-                "product4-features": "천연 목재, 각도 조절 가능, 견고하고 내구성 있음",
-                "features": "특징:",
+                "repository": "저장소：",
+                "demo": "데모：",
                 "footer": "© 2025 nuJaM의 제품 쇼케이스 | 연락처: 24ci0229@jec.ac.jp",
                 "language": "언어",
                 "chinese": "중국어",
@@ -345,7 +389,7 @@
         };
 
         // 默认语言
-        let currentLanguage = 'en';
+        let currentLanguage = 'zh';
 
         // 获取DOM元素
         const languageBtn = document.getElementById('languageBtn');
