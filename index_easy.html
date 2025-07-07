@@ -3,65 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://88814588nujam.github.io/nuJaM-Express/nuJaM.ico" type="image/x-icon">
+	<link rel="icon" href="https://88814588nujam.github.io/nuJaM-Express/nuJaM.ico" type="image/x-icon">
     <title>nuJaM's World</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Pixelify Sans', 'Microsoft YaHei', sans-serif;
+            font-family: 'Microsoft YaHei', sans-serif;
         }
         
         body {
-            background-color: #1a1a2e;
-            color: #e6e6e6;
+            background-color: #f5f5f5;
+            color: #333;
             line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
         }
         
         header {
-            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            background-color: #2c3e50;
             color: white;
             padding: 1rem 0;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: relative;
-            z-index: 10;
-            border-bottom: 2px solid #e94560;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            position: relative;
-            z-index: 2;
         }
         
         .intro {
             text-align: center;
             margin: 30px 0;
-            padding: 30px;
-            background: rgba(30, 30, 60, 0.7);
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(233, 69, 96, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .intro::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, rgba(0,0,0,0) 70%);
-            z-index: -1;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
         .products {
@@ -72,37 +51,21 @@
         }
         
         .product {
-            background: rgba(30, 30, 60, 0.7);
-            border-radius: 12px;
+            background-color: white;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(233, 69, 96, 0.2);
-            position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         
         .product:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
-            border-color: rgba(233, 69, 96, 0.5);
-        }
-        
-        .product::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #e94560 0%, #533483 100%);
+            transform: translateY(-5px);
         }
         
         .product-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 1px solid rgba(233, 69, 96, 0.2);
         }
         
         .product-info {
@@ -112,14 +75,12 @@
         .product-title {
             font-size: 1.3rem;
             margin-bottom: 10px;
-            color: #e94560;
-            font-weight: bold;
+            color: #2c3e50;
         }
         
         .product-desc {
-            color: #b8b8b8;
+            color: #666;
             margin-bottom: 15px;
-            font-size: 0.95rem;
         }
 
         .product-meta {
@@ -127,7 +88,7 @@
         }
 
         .product-desc {
-            height: 75px;
+            height: 80px;
             overflow-y: auto;
             margin-bottom: 15px;
             padding-right: 5px;
@@ -138,61 +99,32 @@
         }
 
         .product-desc::-webkit-scrollbar-thumb {
-            background: #e94560;
+            background: #ccc;
             border-radius: 2px;
         }
 
         .meta-item {
             margin: 8px 0;
-            font-size: 0.9rem;
-        }
-
-        .meta-item strong {
-            color: #e94560;
         }
 
         .repo-link {
-            color: #8d8dff;
-            text-decoration: none;
+            color: #333;
+            text-decoration: block;
             transition: color 0.2s;
             word-break: break-all;
         }
 
         .repo-link:hover {
-            color: #e94560;
+            color: #2c3e50;
             text-decoration: underline;
-        }
-        
-        .product-category {
-            margin: 50px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e94560;
-            color: #e94560;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-        }
-        
-        .product-category::after {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100px;
-            height: 2px;
-            background: #533483;
         }
         
         footer {
             text-align: center;
-            padding: 40px 20px 50px;
-            background: linear-gradient(180deg, #0f3460 0%, #16213e 100%);
+            padding: 20px;
+            background-color: #2c3e50;
             color: white;
-            margin-top: 80px;
-			margin-bottom: 120px;
-            position: relative;
-            border-top: 2px solid #e94560;
+            margin-top: 40px;
         }
 
         .language-switcher {
@@ -202,7 +134,7 @@
         }
         
         .language-btn {
-            background-color: #533483;
+            background-color: #34495e;
             color: white;
             border: none;
             padding: 8px 15px;
@@ -211,13 +143,6 @@
             font-size: 14px;
             display: flex;
             align-items: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .language-btn:hover {
-            background-color: #e94560;
-            transform: translateY(-2px);
         }
         
         .language-icon {
@@ -233,13 +158,12 @@
             position: absolute;
             top: 100%;
             right: 0;
-            background-color: #16213e;
+            background-color: white;
             border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             display: none;
             width: 120px;
             z-index: 10;
-            border: 1px solid #e94560;
         }
         
         .language-dropdown.show {
@@ -249,27 +173,14 @@
         .language-dropdown a {
             display: block;
             padding: 8px 15px;
-            color: #e6e6e6;
+            color: #333;
             text-decoration: none;
-            transition: all 0.2s;
         }
         
         .language-dropdown a:hover {
-            background-color: #e94560;
-            color: white;
+            background-color: #f5f5f5;
         }
         
-        #particleCanvas {
-			position: fixed;
-			top: 0;
-			left: 0;
-			z-index: 0;
-			width: 100vw;
-			height: 100vh;
-			background: transparent;
-			pointer-events: none;
-		}
-
         @media (max-width: 768px) {
             .products {
                 grid-template-columns: 1fr;
@@ -285,41 +196,10 @@
                 right: auto;
                 left: 0;
             }
-            
-            .intro {
-                padding: 20px;
-            }
         }
     </style>
-	<style>
-		body {
-		margin: 0;
-		background: #0b0c18;
-		overflow-x: hidden;
-		}
-
-		#footer-ship {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 120px;
-		background: rgba(10, 12, 20, 0.9);
-		box-shadow: 0 -5px 25px rgba(100, 50, 0, 0.7);
-		pointer-events: none;
-		z-index: 9999;
-		}
-
-		canvas {
-		display: block;
-		width: 100%;
-		height: 100%;
-		}
-</style>
 </head>
 <body>
-    <canvas id="particleCanvas"></canvas>
-    
     <header>
         <div class="container">
             <h1 data-i18n="title"></h1>
@@ -331,7 +211,7 @@
                     <span class="language-text" data-i18n="language"></span>
                 </button>
                 <div class="language-dropdown" id="languageDropdown">
-                    <a href="#" data-lang="en" data-i18n="english"></a>
+		    <a href="#" data-lang="en" data-i18n="english"></a>
                     <a href="#" data-lang="zh" data-i18n="chinese"></a>
                     <a href="#" data-lang="ja" data-i18n="japanese"></a>
                     <a href="#" data-lang="ko" data-i18n="korean"></a>
@@ -345,18 +225,18 @@
             <h2 data-i18n="welcome"></h2>
             <p data-i18n="intro-text"></p>
         </section>
-        
-        <section class="product-category">
-            <h2 data-i18n="type1"></h2>
+		
+		<section class="product-category">
+			<h2 data-i18n="type1"></h2>
         </section>
 
         <section class="products">
-            <div class="product">
+			<div class="product">
                 <img src="https://88814588nujam.github.io/nuJaM-Express/Overtime-day.png" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product1-title"></h3>
                     <p class="product-desc" data-i18n="product1-desc"></p>
-                    <p class="meta-item">
+					<p class="meta-item">
                         <strong data-i18n="development"></strong>
                         <span data-i18n="product1-development"></span>
                     </p>
@@ -370,13 +250,13 @@
                     </p>
                 </div>
             </div>
-        
+		
             <div class="product">
                 <img src="https://88814588nujam.github.io/nuJaM-Express/Last-Hope-Of-Humanity.png" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product2-title"></h3>
                     <p class="product-desc" data-i18n="product2-desc"></p>
-                    <p class="meta-item">
+					<p class="meta-item">
                         <strong data-i18n="development"></strong>
                         <span data-i18n="product2-development"></span>
                     </p>
@@ -396,7 +276,7 @@
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product3-title"></h3>
                     <p class="product-desc" data-i18n="product3-desc"></p>
-                    <p class="meta-item">
+					<p class="meta-item">
                         <strong data-i18n="development"></strong>
                         <span data-i18n="product3-development"></span>
                     </p>
@@ -416,7 +296,7 @@
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product4-title"></h3>
                     <p class="product-desc" data-i18n="product4-desc"></p>
-                    <p class="meta-item">
+					<p class="meta-item">
                         <strong data-i18n="development"></strong>
                         <span data-i18n="product4-development"></span>
                     </p>
@@ -436,7 +316,7 @@
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product5-title"></h3>
                     <p class="product-desc" data-i18n="product5-desc"></p>
-                    <p class="meta-item">
+					<p class="meta-item">
                         <strong data-i18n="development"></strong>
                         <span data-i18n="product5-development"></span>
                     </p>
@@ -450,13 +330,13 @@
                     </p>
                 </div>
             </div>
-            
-            <div class="product">
+			
+			<div class="product">
                 <img src="https://88814588nujam.github.io/nuJaM-Express/Repression.png" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="product6-title"></h3>
                     <p class="product-desc" data-i18n="product6-desc"></p>
-                    <p class="meta-item">
+					<p class="meta-item">
                         <strong data-i18n="development"></strong>
                         <span data-i18n="product6-development"></span>
                     </p>
@@ -471,10 +351,10 @@
                 </div>
             </div>
         </section>
-        
-        <section class="product-category">
-            <h2 data-i18n="type2"></h2>
-        </section>
+		
+		<section class="product-category">
+			<h2 data-i18n="type2"></h2>
+		</section>
 
         <section class="products">
             <div class="product">
@@ -482,7 +362,7 @@
                 <div class="product-info">
                     <h3 class="product-title" data-i18n="other1-title"></h3>
                     <p class="product-desc" data-i18n="other1-desc"></p>
-                    <p class="meta-item">
+					<p class="meta-item">
                         <strong data-i18n="development"></strong>
                         <span data-i18n="other1-development"></span>
                     </p>
@@ -492,333 +372,64 @@
                     </p>
                     <p class="meta-item">
                         <strong data-i18n="demo"></strong>
-                        <span data-i18n="other1-demo"></span>
-                    </p>
+                        <!-- <a href="http://203.55.196.228:8082/ykg_cmcc_jiangsu/?uu=111" target="_blank" rel="noopener noreferrer" class="repo-link" data-i18n="other1-demo"></a> -->
+						<span data-i18n="other1-demo"></span>
+					</p>
                 </div>
             </div>
-        </section>
+		</section>
     </div>
 
     <footer>
         <div class="container">
             <p data-i18n="footer"></p>
         </div>
-		
-		<div id="footer-ship">
-			<canvas id="ship-canvas"></canvas>
-		</div>
     </footer>
-
-	<script>
-		(() => {
-			const canvas = document.getElementById('ship-canvas');
-			const ctx = canvas.getContext('2d');
-			let width, height;
-
-			function resize() {
-				width = canvas.width = window.innerWidth;
-				height = canvas.height = 120;
-			}
-
-			function randRange(min, max) {
-				return Math.random() * (max - min) + min;
-			}
-
-			class Star {
-				constructor() {
-					this.reset();
-				}
-				
-				reset() {
-					this.x = Math.random() * width;
-					this.y = Math.random() * height * 0.5;
-					this.size = Math.random() * 1.5 + 0.3;
-					this.alpha = randRange(0.1, 0.9);
-					this.alphaSpeed = randRange(0.002, 0.01);
-					this.increasing = Math.random() > 0.5;
-				}
-				
-				update() {
-					if (this.increasing) {
-						this.alpha += this.alphaSpeed;
-						if (this.alpha >= 0.9) {
-							this.alpha = 0.9;
-							this.increasing = false;
-						}
-					} else {
-						this.alpha -= this.alphaSpeed;
-						if (this.alpha <= 0.1) {
-							this.alpha = 0.1;
-							this.increasing = true;
-						}
-					}
-				}
-
-				draw(ctx) {
-					ctx.save();
-					ctx.fillStyle = `rgba(255,255,255,${this.alpha.toFixed(2)})`;
-					ctx.beginPath();
-					ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-					ctx.fill();
-					ctx.restore();
-				}
-			}
-
-			class Spark {
-				constructor(x, y) {
-					this.x = x;
-					this.y = y;
-					this.vx = randRange(-0.8, 0.8);
-					this.vy = randRange(-2, -0.5);
-					this.size = randRange(1, 3);
-					this.alpha = 1;
-					this.fade = randRange(0.01, 0.03);
-					this.color = `hsl(${randRange(30, 50)}, 100%, 60%)`;
-				}
-			
-				update() {
-					this.x += this.vx;
-					this.y += this.vy;
-					this.alpha -= this.fade;
-					this.size *= 0.95;
-				}
-
-				draw(ctx) {
-					if (this.alpha <= 0) return;
-					ctx.save();
-					ctx.globalAlpha = this.alpha;
-					ctx.fillStyle = this.color;
-					ctx.shadowColor = this.color;
-					ctx.shadowBlur = 6;
-					ctx.beginPath();
-					ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-					ctx.fill();
-					ctx.restore();
-				}
-			}
-
-			class Ship {
-				constructor() {
-					this.x = -70;
-					this.baseY = height / 2 + 10;
-					this.y = this.baseY;
-					this.speed = 1.4;
-					this.acceleration = 0.025;
-					this.maxSpeed = 7;
-					this.flamePhase = 0;
-					this.oscillationPhase = 0;
-					this.opacity = 1;
-					this.fadingOut = false;
-					this.sparks = [];
-				}
-
-				update() {
-					if (this.speed < this.maxSpeed) this.speed += this.acceleration;
-					this.x += this.speed;
-
-					this.oscillationPhase += 0.1;
-					this.y = this.baseY + Math.sin(this.oscillationPhase) * 5;
-
-					this.flamePhase += 0.2;
-
-					this.sparks.forEach(s => s.update());
-					this.sparks = this.sparks.filter(s => s.alpha > 0 && s.size > 0.3);
-
-					if (Math.random() < 0.3) {
-						this.sparks.push(new Spark(this.x - 15, this.y + randRange(-5, 5)));
-					}
-
-					if (this.x > width + 70 && !this.fadingOut) {
-						this.fadingOut = true;
-					}
-					
-					if (this.fadingOut) {
-						this.opacity -= 0.02;
-						if (this.opacity <= 0) {
-							this.opacity = 0;
-							this.x = -70;
-							this.speed = 1.4;
-							this.fadingOut = false;
-							this.opacity = 1;
-						}
-					}
-				}
-
-				draw(ctx) {
-					ctx.save();
-					ctx.globalAlpha = this.opacity;
-					ctx.translate(this.x, this.y);
-
-					const bodyWidth = 45;
-					const bodyHeight = 22;
-					const gradient = ctx.createLinearGradient(0, -bodyHeight/2, 0, bodyHeight/2);
-					gradient.addColorStop(0, '#7dafff');
-					gradient.addColorStop(0.5, '#558edc');
-					gradient.addColorStop(1, '#3f5e9a');
-					ctx.fillStyle = gradient;
-					ctx.fillRect(0, -bodyHeight / 2, bodyWidth, bodyHeight);
-
-					const headGrad = ctx.createLinearGradient(bodyWidth, -bodyHeight/2, bodyWidth + 18, 0);
-					headGrad.addColorStop(0, '#8bb7ff');
-					headGrad.addColorStop(1, '#3461b2');
-					ctx.fillStyle = headGrad;
-					ctx.beginPath();
-					ctx.moveTo(bodyWidth, -bodyHeight/2);
-					ctx.lineTo(bodyWidth + 18, 0);
-					ctx.lineTo(bodyWidth, bodyHeight/2);
-					ctx.closePath();
-					ctx.fill();
-
-					ctx.fillStyle = '#2f4270';
-					ctx.fillRect(-12, -14, 12, 6);
-					ctx.fillRect(-12, 8, 12, 6);
-
-					ctx.strokeStyle = '#b0d1ff';
-					ctx.lineWidth = 1;
-					ctx.strokeRect(12, -8, 10, 16);
-					ctx.beginPath();
-					ctx.moveTo(12, 0);
-					ctx.lineTo(22, 0);
-					ctx.moveTo(17, -8);
-					ctx.lineTo(17, 8);
-					ctx.stroke();
-
-					const glowRadial = ctx.createRadialGradient(-15, 0, 2, -15, 0, 12);
-					glowRadial.addColorStop(0, 'rgba(255, 150, 50, 0.9)');
-					glowRadial.addColorStop(1, 'rgba(255, 150, 50, 0)');
-					ctx.fillStyle = glowRadial;
-					ctx.beginPath();
-					ctx.ellipse(-15, 0, 8, 14, 0, 0, Math.PI * 2);
-					ctx.fill();
-
-					const blinkAlpha = 0.5 + Math.sin(this.flamePhase * 5) * 0.5;
-					ctx.fillStyle = `rgba(255, 255, 255, ${blinkAlpha.toFixed(2)})`;
-					ctx.beginPath();
-					ctx.arc(bodyWidth - 5, -8, 3, 0, Math.PI * 2);
-					ctx.fill();
-					ctx.beginPath();
-					ctx.arc(bodyWidth - 5, 8, 3, 0, Math.PI * 2);
-					ctx.fill();
-
-					const flameBaseX = -15;
-					const flameWidth = 20;
-					const flameHeight = 28;
-
-					const colors = [
-						['rgba(255,255,200,0)', 'rgba(255,255,150,0.9)', 'rgba(255,255,150,0)'],
-						['rgba(255,165,0,0)', 'rgba(255,140,0,0.8)', 'rgba(255,165,0,0)'],
-						['rgba(255,69,0,0)', 'rgba(255,69,0,0.7)', 'rgba(255,69,0,0)']
-					];
-
-					for (let i = 0; i < colors.length; i++) {
-						const phase = this.flamePhase + i * 1.4;
-						const offsetY = Math.sin(phase) * 4;
-
-						const widthOsc = flameWidth + Math.sin(phase * 3) * 4;
-						const heightOsc = flameHeight + Math.cos(phase * 2) * 8;
-
-						const grad = ctx.createLinearGradient(flameBaseX - widthOsc, offsetY - heightOsc / 2, flameBaseX, offsetY + heightOsc / 2);
-						grad.addColorStop(0, colors[i][0]);
-						grad.addColorStop(0.5, colors[i][1]);
-						grad.addColorStop(1, colors[i][2]);
-
-						ctx.fillStyle = grad;
-						ctx.beginPath();
-						ctx.ellipse(flameBaseX - widthOsc / 2, offsetY, widthOsc, heightOsc / 3, 0, 0, Math.PI * 2);
-						ctx.fill();
-					}
-
-					this.sparks.forEach(s => s.draw(ctx));
-
-					ctx.restore();
-				}
-			}
-
-			let stars = [];
-			const STAR_COUNT = 40;
-			function initStars() {
-				stars = [];
-				for (let i = 0; i < STAR_COUNT; i++) {
-					stars.push(new Star());
-				}
-			}
-
-			let ship;
-
-			function animate() {
-				ctx.clearRect(0, 0, width, height);
-
-				stars.forEach(s => {
-						s.update();
-						s.draw(ctx);
-				});
-				ship.update();
-				ship.draw(ctx);
-
-				requestAnimationFrame(animate);
-			}
-
-			function init() {
-				resize();
-				initStars();
-				ship = new Ship();
-				animate();
-			}
-
-			window.addEventListener('resize', () => {
-				resize();
-				initStars();
-			});
-
-			init();
-		})();
-	</script>
-
     <script>
         const translations = {
-            en: {
+	    en: {
                 "title": "nuJaM's World",
                 "subtitle": "I have not failed. I've just found 10,000 ways that won't work.",
                 "welcome": "Welcome to My Portfolio",
-                "type1": "GAME",
-                "type2": "OTHER",
+				"type1": "GAME",
+				"type2": "OTHER",
                 "intro-text": "Here are displayed various works that I have carefully designed and produced, I hope you like them.",
                 "product1-title": "Overtime-day",
                 "product1-desc": "A simple 2D role-playing game developed in C++. The protagonist is a skeleton or a slime, attacking invading human heroes.",
-                "product1-development": "C++",
-                "product1-repository": "https://github.com/88814588nujam/Overtime-day.git",
-                "product1-demo": "Unavailable",
-                "product2-title": "Jump-Game",
+				"product1-development": "C++",
+				"product1-repository": "https://github.com/88814588nujam/Overtime-day.git",
+				"product1-demo": "Unavailable",
+				"product2-title": "Jump-Game",
                 "product2-desc": "A simple jump game developed using Unity. Although this is the first simple work made to help learn Photoshop skills, it still has a certain playability.",
-                "product2-development": "Unity",
-                "product2-repository": "https://github.com/88814588nujam/Jump-Game.git",
-                "product2-demo": "Unavailable",
+				"product2-development": "Unity",
+				"product2-repository": "https://github.com/88814588nujam/Jump-Game.git",
+				"product2-demo": "Unavailable",
                 "product3-title": "Hungry",
                 "product3-desc": "A game similar to Snake made with Unity. The theme of zombies eating humans.",
-                "product3-development": "Unity",
+				"product3-development": "Unity",
                 "product3-repository": "https://github.com/88814588nujam/Hungry.git",
-                "product3-demo": "Unavailable",
+				"product3-demo": "Unavailable",
                 "product4-title": "Become-A-Dragon",
                 "product4-desc": "A game that combines the twelve Chinese zodiac animals. Starting from the smallest mouse, the same animal is combined into a larger animal. Developed using Unity.",
-                "product4-development": "Unity",
-                "product4-repository": "https://github.com/88814588nujam/Become-A-Dragon.git",
-                "product4-demo": "https://88814588nujam.github.io/Become-A-Dragon-WebGL/",
+				"product4-development": "Unity",
+				"product4-repository": "https://github.com/88814588nujam/Become-A-Dragon.git",
+				"product4-demo": "https://88814588nujam.github.io/Become-A-Dragon-WebGL/",
                 "product5-title": "Interstellar",
                 "product5-desc": "An airplane shooting game made with Unity. A game that every game developer must have made.",
-                "product5-development": "Unity",
-                "product5-repository": "https://github.com/88814588nujam/Interstellar.git",
-                "product5-demo": "https://88814588nujam.github.io/Interstellar-WebGL/",
-                "product6-title": "Repression",
+				"product5-development": "Unity",
+				"product5-repository": "https://github.com/88814588nujam/Interstellar.git",
+				"product5-demo": "https://88814588nujam.github.io/Interstellar-WebGL/",
+				"product6-title": "Repression",
                 "product6-desc": "A simple space shooting 3D game developed using Unity.",
-                "product6-development": "Unity",
-                "product6-repository": "https://github.com/88814588nujam/Repression.git",
-                "product6-demo": "https://88814588nujam.github.io/Repression-WebGL/",
-                "other1-title": "Joymusic",
+				"product6-development": "Unity",
+				"product6-repository": "https://github.com/88814588nujam/Repression.git",
+				"product6-demo": "https://88814588nujam.github.io/Repression-WebGL/",
+				"other1-title": "Joymusic",
                 "other1-desc": "A Chinese IPTV song request system that allows you to sing karaoke at home using your TV.",
-                "other1-development": "Java Mysql",
-                "other1-repository": "https://github.com/88814588nujam/joymusic_cucc_center.git",
-                "other1-demo": "Unavailable",
-                "development": "Tools or languages: ",
+				"other1-development": "Java Mysql",
+				"other1-repository": "https://github.com/88814588nujam/joymusic_cucc_center.git",
+				"other1-demo": "Unavailable",
+				"development": "Tools or languages: ",
                 "repository": "Repository: ",
                 "demo": "Demo: ",
                 "footer": "© 2025 nuJaM's Works | Contact: 24ci0229@jec.ac.jp",
@@ -833,42 +444,42 @@
                 "subtitle": "我没有失败，我只是找到了一万种不行的方法。",
                 "welcome": "欢迎来到我的作品展示",
                 "intro-text": "这里展示了我精心设计和制作的各种作品，希望大家喜欢。",
-                "product1-title": "Overtime-day",
+				"product1-title": "Overtime-day",
                 "product1-desc": "使用C++ 开发的简单的2D角色扮演游戏。主角是一只骷髅或者史莱姆，攻击来犯的人类英雄们。",
-                "product1-development": "C++",
-                "product1-repository": "https://github.com/88814588nujam/Overtime-day.git",
-                "product1-demo": "暂缺",
+				"product1-development": "C++",
+				"product1-repository": "https://github.com/88814588nujam/Overtime-day.git",
+				"product1-demo": "暂缺",
                 "product2-title": "Jump-Game",
                 "product2-desc": "使用Unity开发的简单跳跃游戏。虽然只是为了配合学习phototshop技巧时制作的第一个简单的作品，但是依然有一定的游戏性。",
-                "product2-development": "Unity",
+				"product2-development": "Unity",
                 "product2-repository": "https://github.com/88814588nujam/Jump-Game.git",
                 "product2-demo": "暂缺",
                 "product3-title": "Hungry",
                 "product3-desc": "使用Unity制作的类似贪吃蛇的游戏，主题是僵尸吃人。",
-                "product3-development": "Unity",
+				"product3-development": "Unity",
                 "product3-repository": "https://github.com/88814588nujam/Hungry.git",
-                "product3-demo": "暂缺",
+				"product3-demo": "暂缺",
                 "product4-title": "Become-A-Dragon",
                 "product4-desc": "一款十二生肖组合游戏。从最小的老鼠开始，将同一种动物组合成更大的动物。使用Unity开发。",
-                "product4-development": "Unity",
-                "product4-repository": "https://github.com/88814588nujam/Become-A-Dragon.git",
-                "product4-demo": "https://88814588nujam.github.io/Become-A-Dragon-WebGL/",
+				"product4-development": "Unity",
+				"product4-repository": "https://github.com/88814588nujam/Become-A-Dragon.git",
+				"product4-demo": "https://88814588nujam.github.io/Become-A-Dragon-WebGL/",
                 "product5-title": "Interstellar",
                 "product5-desc": "使用unity制作的飞机射击游戏。每个游戏开发者必定制作过的游戏。",
-                "product5-development": "Unity",
-                "product5-repository": "https://github.com/88814588nujam/Interstellar.git",
-                "product5-demo": "https://88814588nujam.github.io/Interstellar-WebGL/",
-                "product6-title": "Repression",
+				"product5-development": "Unity",
+				"product5-repository": "https://github.com/88814588nujam/Interstellar.git",
+				"product5-demo": "https://88814588nujam.github.io/Interstellar-WebGL/",
+				"product6-title": "Repression",
                 "product6-desc": "一个简单的宇宙射击3D游戏，使用unity开发。",
-                "product6-development": "Unity",
-                "product6-repository": "https://github.com/88814588nujam/Repression.git",
-                "product6-demo": "https://88814588nujam.github.io/Repression-WebGL/",
-                "other1-title": "Joymusic",
+				"product6-development": "Unity",
+				"product6-repository": "https://github.com/88814588nujam/Repression.git",
+				"product6-demo": "https://88814588nujam.github.io/Repression-WebGL/",
+				"other1-title": "Joymusic",
                 "other1-desc": "中国IPTV点歌系统，让您可以使用电视在家唱卡拉OK。",
-                "other1-development": "Java Mysql",
-                "other1-repository": "https://github.com/88814588nujam/joymusic_cucc_center.git",
-                "other1-demo": "暂缺",
-                "development": "开发工具或语言: ",
+				"other1-development": "Java Mysql",
+				"other1-repository": "https://github.com/88814588nujam/joymusic_cucc_center.git",
+				"other1-demo": "暂缺",
+				"development": "开发工具或语言: ",
                 "repository": "仓库：",
                 "demo": "演示：",
                 "footer": "© 2025 nuJaM的作品 | 联系邮箱: 24ci0229@jec.ac.jp",
@@ -885,40 +496,40 @@
                 "intro-text": "ここでは私が丹念にデザインし制作した様々な作品が展示されていますので、気に入っていただければ幸いです。",
                 "product1-title": "Overtime-day",
                 "product1-desc": "C++で開発されたシンプルな2Dロールプレイングゲームです。主人公はスケルトンまたはスライムで、侵略してきた人間のヒーローたちを攻撃します。",
-                "product1-development": "C++",
-                "product1-repository": "https://github.com/88814588nujam/Overtime-day.git",
-                "product1-demo": "利用不可",
-                "product2-title": "Jump-Game",
+				"product1-development": "C++",
+				"product1-repository": "https://github.com/88814588nujam/Overtime-day.git",
+				"product1-demo": "利用不可",
+				"product2-title": "Jump-Game",
                 "product2-desc": "Unityを使用して開発されたシンプルなジャンプゲーム。これはPhotoshopのスキルを習得するために作成された最初のシンプルな作品ですが、それでもある程度の遊び心があります。",
-                "product2-development": "Unity",
+				"product2-development": "Unity",
                 "product2-repository": "https://github.com/88814588nujam/Jump-Game.git",
                 "product2-demo": "利用不可",
                 "product3-title": "Hungry",
                 "product3-desc": "Unityで作ったSnakeに似たゲーム。ゾンビが人間を食べるというテーマ。",
-                "product3-development": "Unity",
-                "product3-repository": "https://github.com/88814588nujam/Hungry.git",
+				"product3-development": "Unity",
+				"product3-repository": "https://github.com/88814588nujam/Hungry.git",
                 "product3-demo": "利用不可",
                 "product4-title": "Become-A-Dragon",
                 "product4-desc": "十二支の動物を組み合わせるゲームです。一番小さなネズミから始まり、同じ動物を組み合わせて大きな動物を作ります。Unityを使用して開発されました。",
-                "product4-development": "Unity",
-                "product4-repository": "https://github.com/88814588nujam/Become-A-Dragon.git",
-                "product4-demo": "https://88814588nujam.github.io/Become-A-Dragon-WebGL/",
+				"product4-development": "Unity",
+				"product4-repository": "https://github.com/88814588nujam/Become-A-Dragon.git",
+				"product4-demo": "https://88814588nujam.github.io/Become-A-Dragon-WebGL/",
                 "product5-title": "Interstellar",
                 "product5-desc": "UNITYで作った飛行機シューティングゲーム。ゲーム開発者なら一度は作ったことがあるはず。",
-                "product5-development": "Unity",
-                "product5-repository": "https://github.com/88814588nujam/Interstellar.git",
-                "product5-demo": "https://88814588nujam.github.io/Interstellar-WebGL/",
-                "product6-title": "Repression",
+				"product5-development": "Unity",
+				"product5-repository": "https://github.com/88814588nujam/Interstellar.git",
+				"product5-demo": "https://88814588nujam.github.io/Interstellar-WebGL/",
+				"product6-title": "Repression",
                 "product6-desc": "Unityを使用して開発されたシンプルな宇宙シューティング3Dゲーム。",
-                "product6-development": "Unity",
-                "product6-repository": "https://github.com/88814588nujam/Repression.git",
-                "product6-demo": "https://88814588nujam.github.io/Repression-WebGL/",
-                "other1-title": "Joymusic",
+				"product6-development": "Unity",
+				"product6-repository": "https://github.com/88814588nujam/Repression.git",
+				"product6-demo": "https://88814588nujam.github.io/Repression-WebGL/",
+				"other1-title": "Joymusic",
                 "other1-desc": "自宅のテレビを使ってカラオケが楽しめる中国の IPTV 楽曲リクエスト システム。",
-                "other1-development": "Java Mysql",
-                "other1-repository": "https://github.com/88814588nujam/joymusic_cucc_center.git",
-                "other1-demo": "利用不可",
-                "development": "開発ツールまたは言語: ",
+				"other1-development": "Java Mysql",
+				"other1-repository": "https://github.com/88814588nujam/joymusic_cucc_center.git",
+				"other1-demo": "利用不可",
+				"development": "開発ツールまたは言語: ",
                 "repository": "リポジトリ：",
                 "demo": "デモ：",
                 "footer": "© 2025 nuJaMの作品 | 連絡先: 24ci0229@jec.ac.jp",
@@ -935,40 +546,40 @@
                 "intro-text": "여기에는 제가 신중하게 디자인하고 제작한 다양한 작품이 전시되어 있습니다. 마음에 드셨으면 좋겠습니다.",
                 "product1-title": "Overtime-day",
                 "product1-desc": "C++로 개발된 간단한 2D 롤플레잉 게임입니다. 주인공은 해골이나 슬라임으로, 침략하는 인간 영웅들을 공격합니다.",
-                "product1-development": "C++",
-                "product1-repository": "https://github.com/88814588nujam/Overtime-day.git",
-                "product1-demo": "없음",
-                "product2-title": "Jump-Game",
+				"product1-development": "C++",
+				"product1-repository": "https://github.com/88814588nujam/Overtime-day.git",
+				"product1-demo": "없음",
+				"product2-title": "Jump-Game",
                 "product2-desc": "Unity를 사용하여 개발한 간단한 점프 게임입니다. Photoshop 실력을 익히기 위한 첫 번째 간단한 작품이지만, 어느 정도 플레이할 만한 가치가 있습니다.",
-                "product2-development": "Unity",
+				"product2-development": "Unity",
                 "product2-repository": "https://github.com/88814588nujam/Jump-Game.git",
                 "product2-demo": "없음",
                 "product3-title": "Hungry",
                 "product3-desc": "Unity로 만든 Snake와 비슷한 게임입니다. 좀비가 사람을 잡아먹는다는 테마를 가지고 있습니다.",
-                "product3-development": "Unity",
+				"product3-development": "Unity",
                 "product3-repository": "https://github.com/88814588nujam/Hungry.git",
                 "product3-demo": "없음",
                 "product4-title": "Become-A-Dragon",
                 "product4-desc": "십이지신을 조합하는 게임입니다. 가장 작은 쥐부터 시작하여 같은 동물을 더 큰 동물로 조합합니다. Unity로 개발되었습니다.",
-                "product4-development": "Unity",
-                "product4-repository": "https://github.com/88814588nujam/Become-A-Dragon.git",
-                "product4-demo": "https://88814588nujam.github.io/Become-A-Dragon-WebGL/",
+				"product4-development": "Unity",
+				"product4-repository": "https://github.com/88814588nujam/Become-A-Dragon.git",
+				"product4-demo": "https://88814588nujam.github.io/Become-A-Dragon-WebGL/",
                 "product5-title": "Interstellar",
                 "product5-desc": "Unity로 만든 비행기 슈팅 게임. 모든 게임 개발자가 한 번쯤 만들어봤을 게임.",
-                "product5-development": "Unity",
-                "product5-repository": "https://github.com/88814588nujam/Interstellar.git",
-                "product5-demo": "https://88814588nujam.github.io/Interstellar-WebGL/",
-                "product6-title": "Repression",
+				"product5-development": "Unity",
+				"product5-repository": "https://github.com/88814588nujam/Interstellar.git",
+				"product5-demo": "https://88814588nujam.github.io/Interstellar-WebGL/",
+				"product6-title": "Repression",
                 "product6-desc": "Unity를 사용하여 개발된 간단한 우주 슈팅 3D 게임입니다.",
-                "product6-development": "Unity",
-                "product6-repository": "https://github.com/88814588nujam/Repression.git",
-                "product6-demo": "https://88814588nujam.github.io/Repression-WebGL/",
-                "other1-title": "Joymusic",
+				"product6-development": "Unity",
+				"product6-repository": "https://github.com/88814588nujam/Repression.git",
+				"product6-demo": "https://88814588nujam.github.io/Repression-WebGL/",
+				"other1-title": "Joymusic",
                 "other1-desc": "집에서 TV를 이용해 노래방을 즐길 수 있는 중국 IPTV 노래 신청 시스템입니다.",
-                "other1-development": "Java Mysql",
-                "other1-repository": "https://github.com/88814588nujam/joymusic_cucc_center.git",
-                "other1-demo": "없음",
-                "development": "개발 도구 또는 언어: ",
+				"other1-development": "Java Mysql",
+				"other1-repository": "https://github.com/88814588nujam/joymusic_cucc_center.git",
+				"other1-demo": "없음",
+				"development": "개발 도구 또는 언어: ",
                 "repository": "저장소：",
                 "demo": "데모：",
                 "footer": "© 2025 nuJaM의 작품 | 연락처: 24ci0229@jec.ac.jp",
@@ -982,140 +593,50 @@
 
         let currentLanguage = 'en';
 
-		const languageBtn = document.getElementById('languageBtn');
-		const languageDropdown = document.getElementById('languageDropdown');
-		const languageOptions = document.querySelectorAll('.language-dropdown a');
+        const languageBtn = document.getElementById('languageBtn');
+        const languageDropdown = document.getElementById('languageDropdown');
+        const languageOptions = document.querySelectorAll('.language-dropdown a');
 
-		function changeLanguage(lang) {
-			currentLanguage = lang;
-			document.documentElement.lang = lang;
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            document.documentElement.lang = lang;
 
-			document.querySelectorAll('[data-i18n]').forEach(element => {
-				const key = element.getAttribute('data-i18n');
-				if (translations[lang] && translations[lang][key]) {
-					element.textContent = translations[lang][key];
-				}
-			});
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
 
-			languageDropdown.classList.remove('show');
-			return false;
-		}
+            languageDropdown.classList.remove('show');
 
-		languageBtn.addEventListener('click', function (e) {
-			e.stopPropagation();
-			languageDropdown.classList.toggle('show');
-		});
+            return false;
+        }
 
-		languageOptions.forEach(option => {
-			option.addEventListener('click', function (e) {
-				e.preventDefault();
-				const lang = this.getAttribute('data-lang');
-				changeLanguage(lang);
-			});
-		});
+        languageBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageDropdown.classList.toggle('show');
+        });
 
-		document.addEventListener('click', function () {
-			languageDropdown.classList.remove('show');
-		});
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
 
-		languageDropdown.addEventListener('click', function (e) {
-			e.stopPropagation();
-		});
+        document.addEventListener('click', function() {
+            languageDropdown.classList.remove('show');
+        });
 
-		document.addEventListener('DOMContentLoaded', function () {
-			changeLanguage(currentLanguage);
-		});
-	</script>
+        languageDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
 
-	<script>
-		const canvas = document.getElementById('particleCanvas');
-		const ctx = canvas.getContext('2d');
-		let width, height;
-		let particles = [];
-		const particleCount = 100;
-		const maxDistance = 100;
-		const colors = ['#e94560', '#533483'];
-
-		function resizeCanvas() {
-			width = canvas.width = window.innerWidth;
-			height = canvas.height = window.innerHeight;
-		}
-
-		window.addEventListener('resize', resizeCanvas);
-		resizeCanvas();
-
-		class Particle {
-			constructor() {
-				this.reset();
-			}
-
-			reset() {
-				this.x = Math.random() * width;
-				this.y = Math.random() * height;
-				this.vx = (Math.random() - 0.5) * 0.5;
-				this.vy = (Math.random() - 0.5) * 0.5;
-				this.size = Math.random() * 2 + 1;
-				this.color = colors[Math.floor(Math.random() * colors.length)];
-			}
-
-			update() {
-				this.x += this.vx;
-				this.y += this.vy;
-
-				if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
-					this.reset();
-				}
-			}
-
-			draw() {
-				ctx.beginPath();
-				ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-				ctx.fillStyle = this.color;
-				ctx.shadowColor = this.color;
-				ctx.shadowBlur = 12;
-				ctx.fill();
-				ctx.closePath();
-			}
-		}
-
-		for (let i = 0; i < particleCount; i++) {
-			particles.push(new Particle());
-		}
-
-		function connectParticles() {
-			for (let i = 0; i < particles.length; i++) {
-				for (let j = i + 1; j < particles.length; j++) {
-					const dx = particles[i].x - particles[j].x;
-					const dy = particles[i].y - particles[j].y;
-					const distance = Math.sqrt(dx * dx + dy * dy);
-
-					if (distance < maxDistance) {
-						const opacity = 1 - distance / maxDistance;
-						ctx.beginPath();
-						ctx.moveTo(particles[i].x, particles[i].y);
-						ctx.lineTo(particles[j].x, particles[j].y);
-						ctx.strokeStyle = `rgba(233, 69, 96, ${opacity * 0.5})`;
-						ctx.lineWidth = 1;
-						ctx.stroke();
-					}
-				}
-			}
-		}
-
-		function animate() {
-			ctx.clearRect(0, 0, width, height);
-
-			for (let p of particles) {
-				p.update();
-				p.draw();
-			}
-
-			connectParticles();
-
-			requestAnimationFrame(animate);
-		}
-
-		animate();
-	</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            changeLanguage(currentLanguage);
+        });
+    </script>
 </body>
 </html>
