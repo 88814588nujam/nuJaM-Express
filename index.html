@@ -176,8 +176,8 @@
                     <span class="language-text" data-i18n="language">语言</span>
                 </button>
                 <div class="language-dropdown" id="languageDropdown">
+		    <a href="#" data-lang="en" data-i18n="english">English</a>
                     <a href="#" data-lang="zh" data-i18n="chinese">中文</a>
-                    <a href="#" data-lang="en" data-i18n="english">English</a>
                     <a href="#" data-lang="ja" data-i18n="japanese">日本語</a>
                     <a href="#" data-lang="ko" data-i18n="korean">한국어</a>
                 </div>
@@ -242,6 +242,31 @@
     <script>
         // 多语言文本
         const translations = {
+	    en: {
+                "title": "My Creative Products",
+                "subtitle": "I have not failed. I've just found 10,000 ways that won't work.",
+                "welcome": "Welcome to My Portfolio",
+                "intro-text": "Here are displayed various works that I have carefully designed and produced.",
+                "product1-title": "Jump-Game",
+                "product1-desc": "A simple jump game developed using Unity.",
+                "product1-features": "Although this is the first simple work made to help learn Photoshop skills, it still has a certain playability.",
+                "product2-title": "Eco-friendly Backpack",
+                "product2-desc": "Backpack made from recycled plastic bottles, lightweight and durable with waterproof design, perfect for daily use and short trips.",
+                "product2-features": "Eco-friendly material, multiple pockets, comfortable straps",
+                "product3-title": "Handmade Ceramic Tea Set",
+                "product3-desc": "Ceramic tea set crafted by hand, each piece is a unique artwork that makes tea drinking a delightful experience.",
+                "product3-features": "Handcrafted, natural glaze, good heat retention",
+                "product4-title": "Wooden Phone Stand",
+                "product4-desc": "Phone stand made from selected solid wood, each with unique natural wood grain, adjustable angle for neck protection.",
+                "product4-features": "Natural wood, adjustable angles, sturdy and durable",
+                "features": "Features:",
+                "footer": "© 2025 nuJaM's Product Showcase | Contact: 24ci0229@jec.ac.jp",
+                "language": "Language",
+                "chinese": "Chinese",
+                "english": "English",
+                "japanese": "Japanese",
+                "korean": "Korean"
+            },
             zh: {
                 "title": "nuJaM的世界",
                 "subtitle": "我没有失败，我只是找到了一万种不行的方法。",
@@ -292,31 +317,6 @@
                 "japanese": "日本語",
                 "korean": "韓国語"
             },
-	    en: {
-                "title": "My Creative Products",
-                "subtitle": "I have not failed. I've just found 10,000 ways that won't work.",
-                "welcome": "Welcome to My Portfolio",
-                "intro-text": "Here are displayed various works that I have carefully designed and produced.",
-                "product1-title": "Jump-Game",
-                "product1-desc": "A simple jump game developed using Unity.",
-                "product1-features": "Although this is the first simple work made to help learn Photoshop skills, it still has a certain playability.",
-                "product2-title": "Eco-friendly Backpack",
-                "product2-desc": "Backpack made from recycled plastic bottles, lightweight and durable with waterproof design, perfect for daily use and short trips.",
-                "product2-features": "Eco-friendly material, multiple pockets, comfortable straps",
-                "product3-title": "Handmade Ceramic Tea Set",
-                "product3-desc": "Ceramic tea set crafted by hand, each piece is a unique artwork that makes tea drinking a delightful experience.",
-                "product3-features": "Handcrafted, natural glaze, good heat retention",
-                "product4-title": "Wooden Phone Stand",
-                "product4-desc": "Phone stand made from selected solid wood, each with unique natural wood grain, adjustable angle for neck protection.",
-                "product4-features": "Natural wood, adjustable angles, sturdy and durable",
-                "features": "Features:",
-                "footer": "© 2025 nuJaM's Product Showcase | Contact: 24ci0229@jec.ac.jp",
-                "language": "Language",
-                "chinese": "Chinese",
-                "english": "English",
-                "japanese": "Japanese",
-                "korean": "Korean"
-            },
             ko: {
                 "title": "nuJaM의 세계",
                 "subtitle": "나는 실패한 게 아니라, 일하지 않는 방법을 수만 가지나 찾아냈을 뿐이다.",
@@ -345,7 +345,7 @@
         };
 
         // 默认语言
-        let currentLanguage = 'zh';
+        let currentLanguage = 'en';
 
         // 获取DOM元素
         const languageBtn = document.getElementById('languageBtn');
