@@ -291,6 +291,70 @@
                 padding: 20px;
             }
         }
+		
+		.qrcode-box {
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			animation: fadeIn 1.2s ease-in-out;
+		}
+
+		.qrcode-img {
+			width: 120px;
+			height: 120px;
+			border: 2px solid #e94560;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+			background-color: white;
+		}
+
+		.qrcode-text {
+			margin-top: 10px;
+			font-size: 0.9rem;
+			color: #e6e6e6;
+			text-shadow: 0 0 5px rgba(233, 69, 96, 0.5);
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(15px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		
+		#backToTop {
+			position: fixed;
+			bottom: 100px; /* 从底部上移远离火箭 */
+			right: 30px;
+			width: 45px;
+			height: 45px;
+			background: linear-gradient(135deg, #e94560, #533483);
+			color: white;
+			border: none;
+			border-radius: 50%;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+			cursor: pointer;
+			font-size: 24px;
+			z-index: 10001; /* 层级比火箭更高，确保在最上面 */
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease;
+		}
+
+		#backToTop:hover {
+			background: linear-gradient(135deg, #ff667f, #7a59b3);
+			transform: translateY(-3px);
+		}
+
+		#backToTop.show {
+			opacity: 1;
+			visibility: visible;
+		}
     </style>
 	<style>
 		body {
@@ -316,7 +380,7 @@
 		width: 100%;
 		height: 100%;
 		}
-</style>
+	</style>
 </head>
 <body>
     <canvas id="particleCanvas"></canvas>
@@ -501,14 +565,19 @@
     </div>
 
     <footer>
-        <div class="container">
-            <p data-i18n="footer"></p>
-        </div>
-		
+		<div class="container">
+			<p data-i18n="footer"></p>
+			<div class="qrcode-box">
+				<img src="images/qrcode.png" alt="QR Code" class="qrcode-img">
+				<p data-i18n="scan" class="qrcode-text"></p>
+			</div>
+		</div>
 		<div id="footer-ship">
 			<canvas id="ship-canvas"></canvas>
 		</div>
-    </footer>
+	</footer>
+	
+	<button id="backToTop" title="Back to top">↑</button>
 
 	<script>
 		(() => {
@@ -822,6 +891,7 @@
                 "development": "Tools or languages: ",
                 "repository": "Repository: ",
                 "demo": "Demo: ",
+				"scan": "My Homepage",
                 "footer": "© 2025 nuJaM's Works | Contact: 24ci0229@jec.ac.jp",
                 "language": "Language",
                 "chinese": "Chinese",
@@ -872,6 +942,7 @@
                 "development": "开发工具或语言: ",
                 "repository": "仓库：",
                 "demo": "演示：",
+				"scan": "我的主页",
                 "footer": "© 2025 nuJaM的作品 | 联系邮箱: 24ci0229@jec.ac.jp",
                 "language": "语言",
                 "chinese": "中文",
@@ -922,6 +993,7 @@
                 "development": "開発ツールまたは言語: ",
                 "repository": "リポジトリ：",
                 "demo": "デモ：",
+				"scan": "マイホームページ",
                 "footer": "© 2025 nuJaMの作品 | 連絡先: 24ci0229@jec.ac.jp",
                 "language": "言語",
                 "chinese": "中国語",
@@ -972,6 +1044,7 @@
                 "development": "개발 도구 또는 언어: ",
                 "repository": "저장소：",
                 "demo": "데모：",
+				"scan": "내 홈페이지",
                 "footer": "© 2025 nuJaM의 작품 | 연락처: 24ci0229@jec.ac.jp",
                 "language": "언어",
                 "chinese": "중국어",
@@ -1117,6 +1190,25 @@
 		}
 
 		animate();
+	</script>
+	
+	<script>
+		const backToTopBtn = document.getElementById('backToTop');
+
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 300) {
+				backToTopBtn.classList.add('show');
+			} else {
+				backToTopBtn.classList.remove('show');
+			}
+		});
+
+		backToTopBtn.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
 	</script>
 </body>
 </html>
